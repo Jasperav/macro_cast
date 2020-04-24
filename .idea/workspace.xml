@@ -12,7 +12,10 @@
     <cargoProject FILE="$PROJECT_DIR$/implcrate/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e4bfa10-93b2-4418-a1df-bd7c698186d8" name="Default Changelist" comment="" />
+    <list default="true" id="5e4bfa10-93b2-4418-a1df-bd7c698186d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +25,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/procmacro" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="nzdaj5al" />
@@ -88,7 +91,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587654075710</updated>
-      <workItem from="1587654077013" duration="721000" />
+      <workItem from="1587654077013" duration="1948000" />
+      <workItem from="1587763021745" duration="267000" />
     </task>
     <servers />
   </component>

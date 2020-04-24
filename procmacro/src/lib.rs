@@ -3,10 +3,10 @@ extern crate proc_macro;
 use proc_macro::{TokenStream, TokenTree, Ident};
 use proc_macro_hack::proc_macro_hack;
 use quote::quote;
-use syn::{parse_macro_input, Expr, DeriveInput, Type};
+use syn::{parse_macro_input, Expr, DeriveInput, Type, parse_str};
 
 #[proc_macro_hack]
-pub fn query(input: TokenStream) -> TokenStream {
+pub fn add_cast_m(input: TokenStream) -> TokenStream {
     let mut some_ident = None;
 
     for i in input {
@@ -17,24 +17,19 @@ pub fn query(input: TokenStream) -> TokenStream {
     }
 
     let some_ident = some_ident.unwrap();
-    let stringified = ident_to_string(&some_ident);
-    let new_ty = determine_type(stringified);
+    let casted = format!("{} as i32", some_ident);
+    let x: syn::ExprCast = parse_str(&casted).unwrap();
 
-    quote! {
-        #x as #new_ty
-    }
+    let q = quote! {
+        #x
+    };
+
+    q.into()
 }
 
 fn ident_to_string(ident: &Ident) -> &'static str {
     match ident.to_string().as_str() {
         "i32" => "tinyint",
-        _ => panic!()
-    }
-}
-
-fn determine_type(ident: &str) -> ?? {
-    match ident {
-        "tinyint" -> i64
         _ => panic!()
     }
 }

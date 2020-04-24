@@ -1,5 +1,8 @@
 use proc_macro_hack::proc_macro_hack;
 
+#[proc_macro_hack]
+pub use procmacro::add_cast_m;
+
 #[cfg(test)]
 mod test {
     use super::*;
