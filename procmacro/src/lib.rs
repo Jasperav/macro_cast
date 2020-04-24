@@ -40,7 +40,7 @@ pub fn add_casts(input: TokenStream) -> TokenStream {
     }
 
     let q = quote! {
-        (#text, #(#idents),*)
+        (#text, #(#idents as i32),*)
     };
 
     q.into()
