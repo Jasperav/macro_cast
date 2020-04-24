@@ -12,10 +12,7 @@
     <cargoProject FILE="$PROJECT_DIR$/implcrate/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e4bfa10-93b2-4418-a1df-bd7c698186d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5e4bfa10-93b2-4418-a1df-bd7c698186d8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587654075710</updated>
       <workItem from="1587654077013" duration="1948000" />
-      <workItem from="1587763021745" duration="267000" />
+      <workItem from="1587763021745" duration="583000" />
     </task>
     <servers />
   </component>

@@ -26,10 +26,3 @@ pub fn add_cast_m(input: TokenStream) -> TokenStream {
 
     q.into()
 }
-
-fn ident_to_string(ident: &Ident) -> &'static str {
-    match ident.to_string().as_str() {
-        "i32" => "tinyint",
-        _ => panic!()
-    }
-}
