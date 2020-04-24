@@ -1,27 +1,46 @@
 extern crate proc_macro;
+extern crate proc_macro2;
 
-use proc_macro::{TokenStream, TokenTree, Ident};
+use proc_macro::{TokenStream, Span, TokenTree};
 use proc_macro_hack::proc_macro_hack;
 use quote::quote;
-use syn::{parse_macro_input, Expr, DeriveInput, Type, parse_str};
+use syn::parse_quote;
+use syn::parse_macro_input;
 
 #[proc_macro_hack]
-pub fn add_cast_m(input: TokenStream) -> TokenStream {
-    let mut some_ident = None;
+pub fn add_casts(input: TokenStream) -> TokenStream {
+    let mut index = -1;
+    let mut text = String::new();
+    let mut idents: Vec<syn::Ident> = vec![];
 
     for i in input {
-        match i {
-            TokenTree::Ident(i) => some_ident = Some(i),
-            _ => panic!()
+        index += 1;
+
+        if index % 2 != 0 {
+            // Each element should be separated by a comma
+            match i {
+                TokenTree::Punct(l) => assert_eq!(",", l.to_string()),
+                _ => panic!("Expected punct, got {:#?}", i)
+            }
+            continue;
+        }
+
+        if index == 0 {
+            // This is the text
+            match i {
+                TokenTree::Literal(l) => text = l.to_string(),
+                _ => panic!("Expected literal, got {:#?}", i)
+            }
+        } else {
+            match i {
+                TokenTree::Ident(i) => idents.push(syn::parse_str(&i.to_string()).unwrap()),
+                _ => panic!("Expected ident, got {:#?}", i)
+            }
         }
     }
 
-    let some_ident = some_ident.unwrap();
-    let casted = format!("{} as i32", some_ident);
-    let x: syn::ExprCast = parse_str(&casted).unwrap();
-
     let q = quote! {
-        #x
+        (#text, #(#idents),*)
     };
 
     q.into()
